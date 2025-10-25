@@ -1,6 +1,5 @@
 from transformers import pipeline
 from datasets import load_dataset
-from tqdm import tqdm
 
 dataset = load_dataset("lucadiliello/newsqa", split="validation[:100]")  
 QA_MODEL = "deepset/roberta-base-squad2"   
@@ -22,7 +21,7 @@ def get_french_answer(question, context):
 
 if __name__ == "__main__":
     results = []
-    for item in tqdm(dataset, desc="Answering"):
+    for item in dataset:
         q = item["question"]
         context = item["context"]
         ans_en, ans_fr = get_french_answer(q, context)
