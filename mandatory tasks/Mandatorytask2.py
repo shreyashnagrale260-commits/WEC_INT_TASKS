@@ -11,8 +11,6 @@ print(df.head())
 
 print("\nSome quick info about the dataset:")
 print(df.info())
-print("\nSummary statistics:")
-print(df.describe())
 
 plt.figure(figsize=(10,4))
 plt.subplot(1,2,1)
@@ -50,15 +48,4 @@ plt.show()
 mse = mean_squared_error(y_test, y_pred)
 print(f"\nMean Squared Error: {mse:.4f}")
 
-story = """
-I started by loading the dataset and checking how w and x affect y.
-From the scatter plots, I could see some pattern or trend.
-Then I trained a simple linear regression model using sklearn.
-After predicting, I plotted actual vs predicted y to see how close they are.
-Finally, I measured the model error using Mean Squared Error.
 
-The model seems to capture the relationship decently.
-Maybe w and x together explain how y behaves — once we understand
-what w and x truly represent in real life, we’ll know the full story.
-"""
-print(story)
